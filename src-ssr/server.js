@@ -53,11 +53,12 @@ export const create = ssrCreate((/* { ... } */) => {
  * For production, you can instead export your
  * handler for serverless use or whatever else fits your needs.
  */
-export const listen = ssrListen(async ({ app, port, isReady }) => {
+export const listen = ssrListen(async ({ app, port, isReady, ssrHandler }) => {
   await isReady()
   return app.listen(port, () => {
     if (process.env.PROD) {
       console.log('Server listening at port ' + port)
+      return { handler: ssrHandler };
     }
   })
 })
