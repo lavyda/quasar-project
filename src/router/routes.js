@@ -7,6 +7,11 @@ const routes = [
       { path: '', component: () => import('pages/IndexPage.vue') }
     ]
   },
+  {
+    path: '/pagination-demo',
+    name: 'pagination-demo',
+    component: () => import('pages/PaginationDemo.vue')
+  },
 
   // Always leave this as last one,
   // but you can also remove it

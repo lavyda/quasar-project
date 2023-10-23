@@ -24,7 +24,7 @@ export default store(function (/* { ssrContext } */) {
     },
     mutations: {
       setProducts(state, products) {
-        state.products = products;
+        state.products = [...state.products, ...products];
       },
     },
 
